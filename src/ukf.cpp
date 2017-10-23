@@ -130,8 +130,8 @@ void UKF::ProcessMeasurement(MeasurementPackage meas_package) {
     UpdateRadar(meas_package);
   }
 
-  std::cout << "ProcessMeasurement(): x_ = " << x_ << endl;
-  std::cout << "ProcessMeasurement(): P_ = " << P_ << endl;
+  std::cout << ">>> x_ = " << x_ << endl;
+  std::cout << ">>> P_ = " << P_ << endl;
 }
 
 void UKF::InitializeRadar(const MeasurementPackage& meas_package) {
