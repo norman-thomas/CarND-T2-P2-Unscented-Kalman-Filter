@@ -122,6 +122,10 @@ void UKF::ProcessMeasurement(MeasurementPackage meas_package) {
     return;
   }
 
+  const double delta_t = (meas_package.timestamp_ - time_us_) / 1e6;
+  Prediction(delta_t);
+  time_us_ = meas_package.timestamp_;
+
   if(meas_package.sensor_type_ == MeasurementPackage::LASER) {
     std::cout << "Updating Lidar" << endl;
     UpdateLidar(meas_package);
